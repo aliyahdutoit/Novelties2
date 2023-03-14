@@ -1,0 +1,9 @@
+{
+  'prodID': ,
+  'prodName': '',
+  'prodDescription': '',
+  'category': '',
+  'price': '',
+  'prodQuantity': '',
+  'imgURL': ''
+}
