@@ -142,7 +142,7 @@ class User {
 // ------------- PRODUCTS -------------- //
 class Product {
     // --- FETCH ALL PRODUCT ITEMS --- //
-    fetchItem(req, res) {
+    fetchItems(req, res) {
          //  DATABASE //
         const fetchAllItems = 
         `SELECT
