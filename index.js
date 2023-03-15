@@ -5,7 +5,7 @@ const route = require('./Controllers');
 // CORS //
 const cors = require('cors');
 // PORT //
-const port = parseInt(process.env.PORT) || 3000;
+const port = parseInt(process.env.PORT) || 4000;
 const app = express();
 const {errorHandling} = require('./Middleware/ErrorHandling');
 const cookieParser = require('cookie-parser');
@@ -18,13 +18,12 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use(route);
-
 app.use(
     cors(),
+    route,
     cookieParser(),
-    express.json,
-    express.urlencoded({extended: false})
+    express.json(),
+    express.urlencoded({extended: true})
 );
 
 app.listen(port, () => {
