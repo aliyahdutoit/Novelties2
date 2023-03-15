@@ -15,7 +15,7 @@ const product = new Product();
 // `const cart = new Cart();`
 
 route.get('^/$|/novelties', (req, res)=> {
-    res.status(200).sendFile(path.join(__dirname, '../View/index.html'));
+    res.status(200).sendFile(path.join(__dirname, '../view/index.html'));
 });
 
 // ----- USERS ------- //
