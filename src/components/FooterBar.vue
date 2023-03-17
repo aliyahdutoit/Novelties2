@@ -1,13 +1,9 @@
 <template>
     <div>
 <!-- Footer -->
-<footer class="text-center text-lg-start bg-light text-muted">
+<footer class="text-center text-lg-start text-muted" id="footer">
     <!-- Section: Social media -->
     <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-      <!-- Left -->
-      <div class="me-5 d-none d-lg-block">
-        <span>Get connected with us on social networks:</span>
-      </div>
       <!-- Left -->
   
       <!-- Right -->
@@ -131,6 +127,10 @@
     }
 </script>
 
-<style lang="scss" scoped>
+<style  scoped>
+
+#footer {
+  background-color: #16055E;
+}
 
 </style>

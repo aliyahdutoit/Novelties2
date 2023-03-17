@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img class="img" src="https://i.postimg.cc/hG8sRYV4/c1856273-ca75-4b0d-a8e3-d964d699d57b.jpg" alt="">
+    <img class="img" src="https://i.postimg.cc/zDHqB19J/aesthetic-purple-dreamer-neonsign.jpg" alt="">
   </div>
   
   <ProductCard/>
@@ -23,6 +23,7 @@ export default {
 .img {
   width: 100%;
   height: 100vh;
+  
 }
 
 

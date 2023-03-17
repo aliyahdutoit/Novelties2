@@ -36,7 +36,7 @@ export default createStore({
     setProduct (state, value) {
       state.product = value
     },
-    spinnerStatus(status, newSpinnerStatus) {
+    spinnerStatus(state, newSpinnerStatus) {
       state.spinnerStatus = newSpinnerStatus
     },
     SortProductsByPrice: (state) => {
@@ -51,6 +51,7 @@ export default createStore({
   },
 
   actions: {
+    // FETCH ALL USERS
     async fetchUsers(context){
       context.commit('spinnerStatus', true)
 
@@ -65,10 +66,11 @@ export default createStore({
         context.commit('spinnerStatus', true)
       }
     },
+    // FETCH ALL PRODUCT ITEMS //
     async fetchProducts(context){
       context.commit('spinnerStatus', true)
 
-      const res = await axios.get(`${renderURL}/products`);
+      const res = await axios.get(`${renderURL}/items`);
       const {results, err} = await res.data;
       if(results){
         context.commit('setProducts', results);
@@ -79,10 +81,11 @@ export default createStore({
 
       }
     },
+    // FETCH SINGLE PRODUCT ITEM //
     async fetchSingleProduct(context, id){
       context.commit('spinnerStatus', true)
 
-      const res = await axios.get(`${renderURL}/products/${id}`);
+      const res = await axios.get(`${renderURL}/item/${id}`);
       const {results, err} = await res.data;
       if(results){
         context.commit('setProduct', results[0]);
@@ -92,6 +95,7 @@ export default createStore({
         context.commit('spinnerStatus', true);
       }
     },
+    // DELETE USER //
     deleteUser: async (context, id)=> {
       let res = await axios.delete(`${renderURL}users/${id}`);
       if(res) {

@@ -1,8 +1,8 @@
 <template>
    <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar">
     <!-- Container wrapper -->
-    <div class="container-fluid">
+    <div class="container-fluid" id="nav">
       <!-- Toggle button -->
       <button
         class="navbar-toggler"
@@ -36,7 +36,16 @@
             <a class="nav-link" href="/about">About</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="/products">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin">Admin</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="/contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
           </li>
         </ul>
         <!-- Left links -->
@@ -49,35 +58,13 @@
         <a class="text-reset me-3" href="#">
           <i class="fas fa-shopping-cart"></i>
         </a>
-  
-        <!-- Notifications -->
-        <div class="dropdown">
-          <a
-            class="text-reset me-3 dropdown-toggle hidden-arrow"
-            href="#"
-            id="navbarDropdownMenuLink"
-            role="button"
-            data-mdb-toggle="dropdown"
-            aria-expanded="false"
-          >
-            <i class="fas fa-bell"></i>
-            <span class="badge rounded-pill badge-notification bg-danger">1</span>
-          </a>
-          <ul
-            class="dropdown-menu dropdown-menu-end"
-            aria-labelledby="navbarDropdownMenuLink"
-          >
-            <li>
-              <a class="dropdown-item" href="#">Some news</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#">Another news</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </li>
-          </ul>
-        </div>
+        <!-- WISHLIST -->
+        <i class="fa-duotone fa-heart"></i>
+
+        <!-- CART -->
+        <a href=""> <i class="fa-duotone fa-cart-shopping"></i></a>
+       
+
         <!-- Avatar -->
         <div class="dropdown">
           <a
@@ -127,5 +114,12 @@ export default {
 
 
 <style scoped>
+#nav {
+  background-color: #16055E;
+  padding: 10px;
+}
 
+.nav-item {
+  color: white;
+}
 </style>
