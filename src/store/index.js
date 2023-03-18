@@ -6,8 +6,8 @@ export default createStore({
   state: {
     users: null,
     user: null,
-    products: null,
-    product: null,
+    items: null,
+    item: null,
     spinnerStatus: true,
     message: null,
     asc: false,
@@ -30,21 +30,21 @@ export default createStore({
     setMessage(state, value) {
       state.message = value
     },
-    setProducts(state, values) {
-      state.products = values
+    setItems(state, values) {
+      state.items = values
     },
-    setProduct (state, value) {
-      state.product = value
+    setItem (state, value) {
+      state.item = value
     },
     spinnerStatus(state, newSpinnerStatus) {
       state.spinnerStatus = newSpinnerStatus
     },
-    SortProductsByPrice: (state) => {
-      state.products.sort((a, b) => {
+    SortItemsByPrice: (state) => {
+      state.items.sort((a, b) => {
         return a.price - b.price;
       });
       if (!state.asc) {
-        state.products.reverse();
+        state.items.reverse();
       }
       state.asc = !state.asc;
     }
@@ -66,14 +66,14 @@ export default createStore({
         context.commit('spinnerStatus', true)
       }
     },
-    // FETCH ALL PRODUCT ITEMS //
-    async fetchProducts(context){
+    // FETCH ALL ITEMS //
+    async fetchItems(context){
       context.commit('spinnerStatus', true)
 
       const res = await axios.get(`${renderURL}/items`);
       const {results, err} = await res.data;
       if(results){
-        context.commit('setProducts', results);
+        context.commit('setItems', results);
         context.commit('spinnerStatus', false);
       } else {
         context.commit('setMessage', err);
@@ -81,14 +81,14 @@ export default createStore({
 
       }
     },
-    // FETCH SINGLE PRODUCT ITEM //
-    async fetchSingleProduct(context, id){
+    // FETCH SINGLE ITEM //
+    async fetchItem(context, id){
       context.commit('spinnerStatus', true)
 
       const res = await axios.get(`${renderURL}/item/${id}`);
       const {results, err} = await res.data;
       if(results){
-        context.commit('setProduct', results[0]);
+        context.commit('setItem', results[0]);
         context.commit('spinnerStatus', false);
       } else {
         context.commit('setMessage', err);
