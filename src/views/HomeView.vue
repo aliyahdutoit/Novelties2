@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <BackgroundImage/>
-    <img class="img" src="https://i.postimg.cc/zDHqB19J/aesthetic-purple-dreamer-neonsign.jpg" alt="">
   </div>
   
   <ProductCard/>
@@ -23,7 +22,8 @@ export default {
 
 <style scoped>
 
-.img {
+.home {
+  background-image: url("https://i.postimg.cc/zDHqB19J/aesthetic-purple-dreamer-neonsign.jpg");
   width: 100%;
   height: 100vh;
   
