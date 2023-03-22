@@ -1,6 +1,10 @@
 import { createStore } from 'vuex';
 import axios from 'axios';
 const renderURL = "https://novelties.onrender.com";
+import {useCookies} from 'vue3-cookies';
+const {cookies} = useCookies();
+const {payload} = ;
+// import router from "router";
 
 export default createStore({
   state: {
@@ -101,7 +105,39 @@ export default createStore({
       if(res) {
         context.dispatch("fetchUsers");
       }
-    }
+    },
+    // REGISTER A USER //
+    async register({commit}, payload) {
+      try {
+        const res = await axios.post(`${renderURL}/register`, payload);
+        const {result, err} = await res.data;
+        if (result) {
+          commit('setUser', result);
+        }else {
+          commit('setMessage', err)
+        }
+      } catch (error) {
+        console.error(error)
+      }
+    },
+    //  LOGIN A USER //
+    async login({commit}, payload) {
+      try {
+        const res = await axios.post(`${renderURL}/login`, payload); 
+          const { result, jwToken} = await res.data
+          if(result) {
+            commit('setUser', result);
+            commit('setToken', jwToken);
+            cookies.set('user_cookie_value', jwToken)
+          }
+        }catch (error) {
+          console.error(error)
+        }
+      },
+      // LOGOUT A USER //
+      async logout({commit}) {
+        commit('clearToken')
+      }
   },
   modules: {
   }

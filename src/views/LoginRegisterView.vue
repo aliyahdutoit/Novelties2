@@ -11,13 +11,13 @@
   
         <!-- Email input -->
         <div class="form-outline mb-4">
-          <input type="email" id="loginName" class="form-control" />
+          <input type="email" id="loginName" class="form-control" v-model="payload.emailAdd" />
           <label class="form-label" for="loginName">Email or username</label>
         </div>
   
         <!-- Password input -->
         <div class="form-outline mb-2">
-          <input type="password" id="loginPassword" class="form-control" />
+          <input type="password" id="loginPassword" class="form-control" v-model="payload.userPwd" />
           <label class="form-label" for="loginPassword">Password</label>
         </div>
   
@@ -42,7 +42,7 @@
   
         <!-- Register buttons -->
         <div class="text-center">
-          <p>Not a member? <a href="#!">Register</a></p>
+          <p>Not a member? <a href="/register">Register</a></p>
         </div>
       </form>
    </div>
@@ -53,9 +53,24 @@
 </template>
 
 <script>
+
     export default {
         
+      data() {
+    return {
+      payload: {
+        userPwd: '',
+        emailAdd: ''
+      }
     }
+  },
+  methods: {
+    login() {
+      console.log('Debug:', this.payload);
+      this.$store.dispatch('login', this.payload)
+    }
+  }
+}
 </script>
 
 <style scoped>

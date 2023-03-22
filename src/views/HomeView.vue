@@ -24,9 +24,9 @@ export default {
 
 .home {
   background-image: url("https://i.postimg.cc/zDHqB19J/aesthetic-purple-dreamer-neonsign.jpg");
-  width: 100%;
+  width: 80%;
+  padding-left: 100px;
   height: 100vh;
-  
 }
 
 
