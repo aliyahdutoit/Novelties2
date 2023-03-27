@@ -36,7 +36,7 @@
             <a class="nav-link text-light" href="/about">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="/products">Products</a>
+            <a class="nav-link text-light" href="/#products">Products</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-light" href="/admin">Admin</a>
@@ -55,14 +55,10 @@
       <!-- Right elements -->
       <div class="d-flex align-items-center">
         <!-- Icon -->
-        <a class="text-reset me-3" href="#">
+        <a class="text-reset me-3" href="/checkout">
           <i class="fas fa-shopping-cart"></i>
         </a>
-        <!-- WISHLIST -->
-        <i class="fa-duotone fa-heart"></i>
-
-        <!-- CART -->
-        <a href=""> <i class="fa-duotone fa-cart-shopping"></i></a>
+      
        
 
         <!-- Avatar -->

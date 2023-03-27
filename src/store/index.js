@@ -3,7 +3,7 @@ import axios from 'axios';
 const renderURL = "https://novelties.onrender.com";
 import {useCookies} from 'vue3-cookies';
 const {cookies} = useCookies();
-const {payload} = ;
+// const {payload} = payload();
 // import router from "router";
 
 export default createStore({

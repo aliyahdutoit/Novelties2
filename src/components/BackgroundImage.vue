@@ -2,6 +2,7 @@
     <div>
         <img src="https://i.postimg.cc/QdhqMFpG/output-onlinegiftools-1.gif" alt="">
     </div>
+    <div id="products"></div>
 </template>
 
 <script>

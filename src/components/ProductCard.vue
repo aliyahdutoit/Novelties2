@@ -4,20 +4,18 @@
   </div>
     <div>
     <div>
-        <div v-for="prodID in items" :key="prodID" class="card mb-3" style="max-wprodIDth: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
+        <div class="card mb-3" style="max-width: 540px;">
                 <img
-                  src={{prodID.imgURL}}
+                  :src=prodID.imgURL
                   alt=""
-                  class="img-fluprodID rounded-start"
+                  class="img-fluid rounded-start"
                 />
               </div>
               <div class="col-md-8">
                 <div class="card-body">
                   <h5 class="card-title text-dark">{{prodID.prodName}}</h5>
                   <p class="card-text text-dark">
-                   {{ prodID.prodDescription }}
+                   {{ prodID.price }}
                   </p>
                   <p class="card-text">
                     <small class="text-muted text-dark">{{prodID.category}}</small>
@@ -26,9 +24,7 @@
               </div>
             </div>
           </div>
-    </div>
-  
-    </div>
+   
 </template>
 
 <script>

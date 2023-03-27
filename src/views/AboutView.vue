@@ -5,33 +5,33 @@
     <div class="container">
       <div class="row">
         <div class="col" id="aboutme">
-         <img src="https://i.postimg.cc/kgRjRqxy/AM-vinyl.jpg" alt="..." class="img-thumbnail">
-         <span id="aboutmesub">I am an aspiring front-end developer in Cape Town, South Africa.</span>
+         <img src="https://i.postimg.cc/kgRjRqxy/AM-vinyl.jpg" alt="arctic monkeys AM vinyl" class="img-thumbnail">
+         <span id="aboutmesub">This is your to-go website for all your bookish and vinyl needs.</span>
          <br>
-         <br><span id="aboutcontent"> I am a creative, hard-working person who is not afraid of a challenge. I enjoy solving
-          problems and working with others in group projects. On, occasion, I enjoy leading group projects, because 
-          i feel that i possess the necessary leadership qualities needed to produce excellent work. 
-          My dedicated nature and effective, enthusiastic and positive personality allows for the best quality of work to be produced.</span>
+         <br><span id="aboutcontent"> 
+          Novelties is your new go-to website when it comes to any and all of your bookish and vinyl needs.
+          we specialize in importing limited edition vinyls and making them accessible to you in an effective, yet affordable manner. 
+          Our book range is diverse and can cater to any personality. We hope to be of the best service!
+        </span>
         </div>
       
         <div class="col" id="workexp">
 
 
-      <h4>Hobbies and Interests</h4>
+      <h4>Vinyl Artists include:</h4>
       <ul>
-        <li>violin</li>
-        <li>cats</li>
-        <li>baking</li>
-        <li>cooking</li>
-        <li>reading</li>
-        <li>writing</li>
-        <li>traveling</li>
-        <li>psychology</li>
-        <li>music</li>
-        <li>photography</li>
-        <li>movies</li>
-        <li>sewing</li>
-    
+        <li>Arctic Monkeys</li>
+        <li>Lana Del Rey</li>
+        <li>The Weekend</li>
+        <li>The Neighborhood</li>
+        </ul>
+
+      <h4>Authors include:</h4>
+      <ul>
+        <li>M.L. Rio</li>
+        <li>Donna Tartt </li>
+
+
       </ul>
     </div>
 </div>

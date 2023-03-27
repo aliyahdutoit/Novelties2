@@ -20,110 +20,8 @@
 
         <h2>Products</h2>
 
-               <!-- Button trigger modal -->
-    <button
-    type="button"
-    class="btn"
-    id="addproductmodal"
-    data-bs-toggle="modal"
-    data-bs-target="#exampleModal"
-  >
-    Add Item
-  </button>
-
-  <!-- Modal -->
-  <div
-    class="modal fade"
-    id="exampleModal"
-    tabindex="-1"
-    aria-labelledby="exampleModalLabel"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Novelties Admin</h5>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-          ></button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <!-- 2 column grid layout with text inputs for the first and last names -->
-            <div class="row mb-4">
-              <div class="col">
-                <div class="form-outline">
-                  <input
-                    type="number"
-                    id="form6Example1"
-                    class="form-control"
-                  />
-                  <label class="form-label" for="form6Example1">ID #</label>
-                </div>
-              </div>
-              <div class="col">
-                <div class="form-outline">
-                  <input
-                    type="number"
-                    id="form6Example2"
-                    class="form-control"
-                  />
-                  <label class="form-label" for="form6Example2">Price</label>
-                </div>
-              </div>
-            </div>
-
-            <!-- Text input -->
-            <div class="form-outline mb-4">
-              <input type="text" id="form6Example3" class="form-control" />
-              <label class="form-label" for="form6Example3">Title</label>
-            </div>
-
-            <!-- Text input -->
-            <div class="form-outline mb-4">
-              <input type="text" id="form6Example4" class="form-control" />
-              <label class="form-label" for="form6Example4">Author</label>
-            </div>
-
-            <!-- Email input -->
-            <div class="form-outline mb-4">
-              <input type="text" id="form6Example5" class="form-control" />
-              <label class="form-label" for="form6Example5">Genre</label>
-            </div>
-
-            <!-- Number input -->
-            <div class="form-outline mb-4">
-              <input type="url" id="form6Example6" class="form-control" />
-              <label class="form-label" for="form6Example6">Image Link</label>
-            </div>
-
-            <!-- Message input -->
-            <div class="form-outline mb-4">
-              <textarea
-                class="form-control"
-                id="form6Example7"
-                rows="4"
-              ></textarea>
-              <label class="form-label" for="form6Example7"></label>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn"
-            data-bs-dismiss="modal"
-          >
-            Cancel
-          </button>
-          <button type="button" class="btn">Save</button>
-        </div>
-      </div>
-    </div>
-  </div>
+             <AddUser/>
+    
         <div class="main">
             <table class="table table-hover">
             <tr>
@@ -136,9 +34,30 @@
                 <th></th>
                 <th></th>                
               </tr>
+
+              <tbody>
+
+                <tr v-for="userID in Users" :key="userID">
+                    <td data-title="ID" class="text-light">{{ userID.userID }}</td>
+                    <td data-title="Firstname" class="text-dark">{{ userID.firstName }}</td>
+                    <td data-title="Lastname" class="text-dark">{{ userID.lastName }}</td>
+                    <td data-title="Gender" class="text-dark">{{ userID.gender }}</td>
+                    <td data-title="Join-Date" class="text-dark">{{ userID.joinDate }}</td>
+                    <td data-title="CellPhone Number" class="text-dark">{{ userID.cellPhoneNumber }}</td>
+                    <td data-title="User Role" class="text-dark">{{ userID.userRole }}</td>
+                    <td data-title="Email" class="text-dark">{{ userID.emailAdd }}</td>
+                    <td data-label="Edit">
+    <UpdateUser />
+  </td>
+  <td data-label="Delete"><button @click="deleteUser(userID.userID)" type="submit"
+      class="btn btn-danger"><i class="fa-regular fa-trash-can"></i></button></td>
+                </tr>
+            </tbody>
         </table>
     </div>
     </div>
+    <FooterBar/>
+    
 </template>
 
 <script>
