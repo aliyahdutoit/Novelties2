@@ -1,21 +1,18 @@
 <template>
-  <div class="home">
+   
     <BackgroundImage/>
-    <ProductView/>
-  </div>
-
+<FooterBar/>
 </template>
 
 <script>
-// @ is an alias to /src
 
 import BackgroundImage from "@/components/BackgroundImage.vue";
-import ProductView from "./ProductView.vue";
+import FooterBar from "@/components/FooterBar.vue";
 export default {
   name: 'HomeView',
   components: {
     BackgroundImage,
-    ProductView,
+    FooterBar
 }
 }
 </script>

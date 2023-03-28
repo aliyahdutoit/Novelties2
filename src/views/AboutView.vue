@@ -38,7 +38,18 @@
     </div>
       
   </div>
+<FooterBar/>
 </template>
+
+<script>
+import FooterBar from '@/components/FooterBar.vue';
+export default {
+components: {
+  FooterBar
+}
+}
+</script>
+
 <style scoped>
 h1 {
   font-weight: bolder;

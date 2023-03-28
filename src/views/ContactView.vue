@@ -1,7 +1,5 @@
 <template>
-    <div>
-GET IN TOUCH WITH US
-    </div>
+ <h3>Get in touch with us</h3>
 
      <!--Contact Form section-->
      <div id="form_">
@@ -11,25 +9,28 @@ GET IN TOUCH WITH US
           <label for="fname" id="labels">Your Name</label>
           <input type="text" id="fname"  name="firstname" placeholder="Your name..">
       
-          <label for="cname" id="labels">Company Name</label>
-          <input type="text" id="cname" name="companyname" placeholder="Your company name..">
-      
+          <label for="cname" id="labels">Your Cellphone Number</label>
+          <input type="number" id="cnumber" name="cellphonenumber" placeholder="cellphonenumber">
+          <br>
           <label for="email" id="labels">Your Email</label>
           <input type="text" id="email" name="email" placeholder="Your email..">
       
-          <label for="message" id="labels">Message</label>
-          <textarea id="message" name="message" placeholder="Write something.." style="height:200px"></textarea>
+          <label for="message" id="labels">Your Message</label>
+          <textarea id="message" name="message" placeholder="What is your Enquiry? Tell us more..." style="height:200px"></textarea>
       
           <input type="submit" id="button" value="Submit"  onclick="myFunction()">
       
         </form>
       </div>
-
+<FooterBar/>
 </template>
 
 <script>
+import FooterBar from '@/components/FooterBar.vue';
     export default {
-        
+        components: {
+          FooterBar
+        }
     }
 </script>
 

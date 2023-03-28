@@ -2,7 +2,6 @@
   <div class="bg"> 
     <NavBar/>
     <router-view/>
-    <FooterBar/>
   </div>
    
 </template>
@@ -12,6 +11,7 @@ import NavBar from "./components/NavBar.vue";
 export default {
     components:{
       NavBar
+   
     }  
 }
 </script>

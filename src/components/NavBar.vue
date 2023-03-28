@@ -36,7 +36,7 @@
             <a class="nav-link text-light" href="/about">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="/#products">Products</a>
+            <a class="nav-link text-light" href="/products">Products</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-light" href="/admin">Admin</a>
