@@ -10,7 +10,7 @@
           <input type="text" id="fname"  name="firstname" placeholder="Your name..">
       
           <label for="cname" id="labels">Your Cellphone Number</label>
-          <input type="number" id="cnumber" name="cellphonenumber" placeholder="cellphonenumber">
+          <input type="tel" id="cnumber" name="cellphonenumber" placeholder="cellphonenumber">
           <br>
           <label for="email" id="labels">Your Email</label>
           <input type="text" id="email" name="email" placeholder="Your email..">
@@ -53,7 +53,7 @@ import FooterBar from '@/components/FooterBar.vue';
   
   /* Style the submit button with a specific background color etc */
   input[type=submit] {
-    background:linear-gradient(to bottom right, violet, rgb(100, 42, 139));
+    background-color: blue;
     color: white;
     padding: 13px 40px;
     border: none;
@@ -73,7 +73,7 @@ import FooterBar from '@/components/FooterBar.vue';
   /* Add a background color and some padding around the form */
   #form {
     border-radius: 5px;
-    background-color: #d6cae5;
+    background-color: #4613BD;
     padding: 30px;
     width: 400px;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, .67);

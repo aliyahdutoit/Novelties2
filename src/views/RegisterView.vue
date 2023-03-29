@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2>theyfkjfbjbewfjbdgjbefvnjsdsjbd</h2>
+        <h2>Become a Novelist by signing up with Novelties!</h2>
 <RegForm/>
     </div>
 </template>

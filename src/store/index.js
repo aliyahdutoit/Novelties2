@@ -3,6 +3,8 @@ import axios from 'axios';
 const renderURL = "https://novelties.onrender.com";
 import {useCookies} from 'vue3-cookies';
 const {cookies} = useCookies();
+import Swal from 'sweetalert';
+import router from '@/router';
 // const {payload} = payload();
 // import router from "router";
 
@@ -51,8 +53,26 @@ export default createStore({
         state.items.reverse();
       }
       state.asc = !state.asc;
+    },
+    SortItemsByName: (state) => {
+      state.products.sort((a, b)=> {
+        return a.prodName.localeCompare(b.prodName);
+      });
+      if(!state.asc) {
+        state.products.reverse();
+      }
+      state.asc = !state.asc;
+    },
+    setCategory(state, category) {
+      state.category = category
+    },
+
+    setSearchByName(state, searchByName) {
+      state.searchByName = searchByName
     }
+
   },
+  
 
   actions: {
     // FETCH ALL USERS
@@ -87,7 +107,7 @@ export default createStore({
     },
     // FETCH SINGLE ITEM //
     async fetchItem(context, id){
-      context.commit('spinnerStatus', true)
+      context.commit('spinnerStatus', true);
 
       const res = await axios.get(`${renderURL}/item/${id}`);
       const {results, err} = await res.data;
@@ -107,17 +127,23 @@ export default createStore({
       }
     },
     // REGISTER A USER //
-    async register({commit}, payload) {
+    async register({ commit }, payload) {
       try {
         const res = await axios.post(`${renderURL}/register`, payload);
-        const {result, err} = await res.data;
-        if (result) {
-          commit('setUser', result);
-        }else {
-          commit('setMessage', err)
+        const { results, err } = await res.data;
+        if (results) {
+          commit("setUser", results);
+          Swal({
+            icon: "success",
+            title: "Register Successful",
+            timer: 1000,
+          });
+          router.push({ name: "login" });
+        } else {
+          commit("setMessage", err);
         }
       } catch (error) {
-        console.error(error)
+        console.error(error);
       }
     },
     //  LOGIN A USER //
@@ -128,10 +154,21 @@ export default createStore({
           if(result) {
             commit('setUser', result);
             commit('setToken', jwToken);
-            cookies.set('user_cookie_value', jwToken)
+            cookies.set('user_cookie_value', jwToken);
+            Swal({
+              icon: "success",
+              title: "Login Successful",
+              timer: 1000,
+            });
+          } else {
+            Swal({
+              icon: "error",
+              title: "Login unsuccessful",
+              timer: 500,
+            });
           }
-        }catch (error) {
-          console.error(error)
+        } catch (error) {
+          console.error(error);
         }
       },
       // LOGOUT A USER //

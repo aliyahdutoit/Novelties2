@@ -24,11 +24,7 @@
         <!-- 2 column grid layout -->
         <div class="row mb-4">
           <div class="col-md-6 d-flex justify-content-center">
-            <!-- Checkbox -->
-            <div class="form-check mb-3 mb-md-0">
-              <input class="form-check-input" type="checkbox" value="" id="loginCheck" checked />
-              <label class="form-check-label" for="loginCheck"> Remember me </label>
-            </div>
+           
           </div>
   
           <div class="col-md-6 d-flex justify-content-center">
@@ -38,7 +34,7 @@
         </div>
   
         <!-- Submit button -->
-        <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+        <button class="btn btn-primary btn-block mb-4" @click.prevent="login">Sign in</button>
   
         <!-- Register buttons -->
         <div class="text-center">
@@ -80,9 +76,12 @@ import FooterBar from '@/components/FooterBar.vue';
 <style scoped>
 
 .formbg {
-    width: 70%;
+    width: 50%;
     margin-left: 200px;
     background-color: #4613BD;
-    padding: 50px;
+    padding: 100px;
+    margin-left: 350px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 </style>

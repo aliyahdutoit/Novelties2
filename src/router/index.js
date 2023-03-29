@@ -18,6 +18,14 @@ const routes = [
     component: () => import('../views/ProductView.vue')
   },
   {
+    path: '/product/:id',
+    name: 'product',
+    component: () => import('../views/SingleProductView.vue'),
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
     path: '/admin',
     name: 'admin',
     component: () => import('../views/AdminView.vue')

@@ -28,10 +28,9 @@
                     <td data-title="Join-Date" class="text-light">{{ userID.joinDate }}</td>
                     
                     <td data-label="Edit">
-
-  </td>
+                      <i class="fa-solid fa-pen-to-square"></i>  </td>
   <td data-label="Delete"><button @click="deleteUser(userID.userID)" type="submit"
-      class="btn"><i class="fa-solid fa-trash fa-lg"></i></button></td>
+      class="btn"><i class="fa-solid fa-trash"></i></button></td>
                 </tr>
             </tbody>
     </table>
@@ -63,10 +62,10 @@
                     <td data-title="Quantity" class="text-light">{{ item.prodQuantity }}</td>
                     <td data-title="Price" class="text-light">R {{ item.price }}</td>
                      <td data-label="Edit">
-
+                      <i class="fa-solid fa-pen-to-square"></i>
   </td>
   <td data-label="Delete"><button @click="deleteProduct(id.id)" type="submit"
-      class="btn"><i class="fa-solid fa-trash fa-lg"></i></button></td>
+      class="btn"><i class="fa-solid fa-trash"></i></button></td>
                 </tr>
             </tbody>
         </table>
